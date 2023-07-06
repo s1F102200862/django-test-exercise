@@ -93,5 +93,6 @@ class TodoViewTestCase(TestCase):
 
                     self.assertEqual(response.status_code, 200)
                     self.assertEqual(response.templates[0].name, 'todo/index.html')
+                    self.assertEqual(len(response.context['tasks']), 2)
                     self.assertEqual(response.context['tasks'][0], task1)
                     self.assertEqual(response.context['tasks'][1], task2)
